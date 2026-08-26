@@ -3,23 +3,31 @@ kind: ImageStream
 apiVersion: image.openshift.io/v1
 spec:
   tags:
-  - name: quay-operator-rhel9
+  - name: quay-rhel9-operator
     from:
       kind: DockerImage
-      name: quay.io/projectquay/quay-operator:v3.99.0-dev
+      name: registry.redhat.io/quay/quay-rhel9-operator
   - name: quay-rhel9
     from:
       kind: DockerImage
-      name: quay.io/projectquay/quay:latest
+      name: registry.redhat.io/quay/quay-rhel9
   - name: clair-rhel9
     from:
       kind: DockerImage
-      name: quay.io/projectquay/clair:4.9.0
+      name: registry.redhat.io/quay/clair-rhel9
   - name: quay-builder-rhel9
     from:
       kind: DockerImage
-      name: quay.io/projectquay/quay-builder:master
+      name: registry.redhat.io/quay/quay-builder-rhel9
   - name: quay-builder-qemu-rhcos-rhel8
     from:
       kind: DockerImage
-      name: quay.io/projectquay/quay-builder-qemu:main
+      name: registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8
+  - name: quay-container-security-rhel9-operator
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/quay/quay-container-security-rhel9-operator
+  - name: quay-bridge-rhel9-operator
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/quay/quay-bridge-rhel9-operator
